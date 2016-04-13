@@ -30,7 +30,8 @@ int main() {
 		std::array<char, 128> buf;
 		buf.fill(0);
 		boost::system::error_code error;
-		size_t len = socket.read_some(boost::asio::buffer(buf), error);
+		//size_t len = socket.read_some(boost::asio::buffer(buf), error);
+		socket.read_some(boost::asio::buffer(buf), error);
 
 		if(error) {
 			if(error == boost::asio::error::eof) {
